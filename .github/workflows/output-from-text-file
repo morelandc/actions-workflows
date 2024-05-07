@@ -1,0 +1,4 @@
+name: output_from_text_file
+
+on:
+  workflow_dispatch:
