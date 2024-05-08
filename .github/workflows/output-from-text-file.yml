@@ -2,3 +2,18 @@ name: output_from_text_file
 
 on:
   workflow_dispatch:
+
+jobs:
+  store-from-file:
+    runs-on: ubuntu-latest
+    outputs:
+      my-num: ${{ steps.store-file-text.outputs.nums1 }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          repository: morelandc/text-file
+      - id: store-file-text
+        run: echo "nums1=$(cat numbers.txt)" >> "$GITHUB_OUTPUT"
+      - name: Print output
+        run: echo "Output is ${{ steps.store-file-text.outputs.nums1 }}"
