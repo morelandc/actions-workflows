@@ -20,7 +20,7 @@ jobs:
           repository: morelandc/java-program
       - name: Store file output
         id: store-output
-        run: echo "str1=$(java ./src/Main.java)" >> $GITHUB_OUTPUT
+        run: ${{ steps.store-output.outputs.str1 }} = (java ./src/Main.java)
       - name: Cat file
         run: cat "$GITHUB_OUTPUT"
       - name: Access output
