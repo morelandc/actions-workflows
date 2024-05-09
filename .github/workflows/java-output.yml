@@ -6,8 +6,6 @@ on:
 jobs:
   get-output-from-file:
     runs-on: ubuntu-latest
-    outputs:
-      output1: ${{ steps.store-output.outputs.str1 }}
     steps:
       - name: Setup Java
         uses: actions/setup-java@v4
