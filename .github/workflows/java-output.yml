@@ -22,7 +22,7 @@ jobs:
       - name: Cat file
         run: cat "$GITHUB_OUTPUT"
       - name: Access output
-        run: echo "Greeting is ${{ store-output.outputs.str2 }}"
+        run: echo "Greeting is ${{ outputs.str2 }}"
 
   pass-to-file:
     runs-on: ubuntu-latest
