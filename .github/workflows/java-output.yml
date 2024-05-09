@@ -20,11 +20,11 @@ jobs:
           repository: morelandc/java-program
       - name: Store file output
         id: store-output
-        run: echo "str2=$(java ./src/Main.java)nji9" >> $GITHUB_OUTPUT
+        run: echo "str1=$(java ./src/Main.java)nji9" >> $GITHUB_OUTPUT
       - name: Cat file
         run: cat "$GITHUB_OUTPUT"
       - name: Access output
-        run: echo "Greeting is ${{ steps.store-output.outputs.str2 }}"
+        run: echo "Greeting is ${{ steps.store-output.outputs.str1 }}"
 
   pass-to-file:
     runs-on: ubuntu-latest
