@@ -2,3 +2,33 @@ name: artifacts
 
 on:
   workflow_dispatch:
+
+jobs:
+  upload-new-artifact:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          repository: morelandc/text-file
+      - name: Output to file
+        run: cat numbers.txt > my_nums.txt
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my_nums
+          path: my_nums.txt
+
+  download-artifact:
+    needs: upload-new-artifact
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: my_nums
+      - name: Read file
+        run: cat my_nums.txt
+          
