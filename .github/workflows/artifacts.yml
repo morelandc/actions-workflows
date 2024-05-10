@@ -19,3 +19,13 @@ jobs:
         with:
           name: my_nums
           path: my_nums.txt
+
+  download-artifact:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+           name: my_nums
+          
