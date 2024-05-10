@@ -26,7 +26,4 @@ jobs:
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
-        with:
-           name: my_nums
-           path: my_nums.txt
           
