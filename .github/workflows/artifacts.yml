@@ -21,6 +21,7 @@ jobs:
           path: my_nums.txt
 
   download-artifact:
+    needs: upload-new-artifact
     runs-on: ubuntu-latest
 
     steps:
