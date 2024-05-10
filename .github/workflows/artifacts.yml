@@ -1,0 +1,4 @@
+name: artifacts
+
+on:
+  workflow_dispatch:
