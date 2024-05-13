@@ -1,0 +1,4 @@
+name: env_vars2
+
+on:
+  workflow_dispatch:
