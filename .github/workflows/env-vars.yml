@@ -10,4 +10,4 @@ jobs:
 
     steps:
       - name: Print variable in DEV environment
-        run: echo $MY_VAR
+        run: echo ${{ vars.MY_VAR }}
