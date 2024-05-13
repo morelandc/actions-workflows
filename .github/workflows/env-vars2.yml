@@ -15,5 +15,5 @@ jobs:
         run: echo "My_VAR1 is $MY_VAR1"
       - name: Assign new var and print
         run: |
-          echo "MY_VAR1=xyz" >> $GITHUB_ENV
-          echo "MY_VAR1 is now $MY_VAR1"
+          echo "MY_VAR2=xyz" >> $GITHUB_ENV
+          echo "MY_VAR2 is $MY_VAR1"
