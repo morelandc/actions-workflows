@@ -2,3 +2,18 @@ name: env_vars2
 
 on:
   workflow_dispatch:
+
+env:
+  MY_VAR1: abcd
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print var
+        run: echo "My_VAR1 is $MY_VAR1"
+      - name: Assign new var
+        run: echo "MY_VAR2=xyz" >> $GITHUB_ENV
+      - name: Print new var
+        run: echo "MY_VAR2 is $MY_VAR2"
